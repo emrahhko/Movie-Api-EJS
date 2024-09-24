@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Movie</title>
+</head>
+<body>
+    <header>
+        <h1>Movies</h1>
+        <%- include('./includes/nav.ejs') %>
+    </header>
+        <main>
+            <% movies.forEach((movie) =>  {%>
+           
+
+            <div>
+                <h2> <%= movie.name  %> </h2>
+                <img src="<%= movie.poster  %>" alt="<%= movie.title  %>">
+                <p> <%= movie.director  %> </p>
+                <p> <%= movie.year  %> </p>
+                <a href="/api/get/<%= movie.id %>">Details</a>
+            </div>
+
+
+
+            <% }) %>
+        </main>
+    
+    
+</body>
+</html>
